@@ -1,106 +1,126 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>QQ会员</title>
-		<style>
-			*{
-				padding: 0;
-				margin: 0;
-				}
-			a{
-				text-decoration: none;
-				float: left;
-			}
-			.logo{
-				display: block;
-				float: left;
-			}
-			.wrap{
-				height: 90px;
-				background-color: rgba(0,0,0,.6);
-			}
-			.heade{
-				width: 1180px;
-				height: 90px;
-				margin: 0 auto;
-				text-align: center;
-			}
-			ul{
-				list-style: none;
-				margin-left: 200px;
-			}
-			ul li{
-				width: 90px;
-				height: 90px;
-				line-height: 90px;
-				float: left;
-				vertical-align: top;
-			}
-			ul li>a{
-				color: white;
-			}
-			ul li>a:hover{color: blue;}
-			.top_right{float: left;}
-			.top_right a{
-				font-size: 16px;
-				display: block;
-				text-align: center;
-				border-radius: 35px;
-				margin-top: 25px;
-			}
-			.top_right a:first-of-type{
-				width: 92px;
-				height: 38px;
-				line-height: 38px;
-				border: 1px solid #d3d083;
-				float: left;
-				color: #f9e175;
-			}
-			.top_right a:first-of-type:hover{
-				background-color: #d3d083;
-				color: #696661;
-			}
-			.top_right a:last-of-type{
-				width: 140px;
-				height: 40px;
-				line-height: 40px;
-				color: #95750e;
-				float: left;
-				background-color: #f9d65e;
-				margin-left: 10px;
-			}
-		</style>
-		<script>
-			window.onload=function(){
-			var aList=document.getElementsByClassName("nav")
-			for(var i=0;i<aList.length;i++){
-				var a=aList[i]
-				a.onclick=function(){
+
+<head>
+	<meta charset="utf-8" />
+	<title>QQ会员</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		a {
+			text-decoration: none;
+			float: left;
+		}
+
+		.logo {
+			display: block;
+			float: left;
+		}
+
+		.wrap {
+			height: 90px;
+			background-color: rgba(0, 0, 0, .6);
+		}
+
+		.heade {
+			width: 1180px;
+			height: 90px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		ul {
+			list-style: none;
+			margin-left: 200px;
+		}
+
+		ul li {
+			width: 90px;
+			height: 90px;
+			line-height: 90px;
+			float: left;
+			vertical-align: top;
+		}
+
+		ul li>a {
+			color: white;
+		}
+
+		ul li>a:hover {
+			color: blue;
+		}
+
+		.top_right {
+			float: left;
+		}
+
+		.top_right a {
+			font-size: 16px;
+			display: block;
+			text-align: center;
+			border-radius: 35px;
+			margin-top: 25px;
+		}
+
+		.top_right a:first-of-type {
+			width: 92px;
+			height: 38px;
+			line-height: 38px;
+			border: 1px solid #d3d083;
+			float: left;
+			color: #f9e175;
+		}
+
+		.top_right a:first-of-type:hover {
+			background-color: #d3d083;
+			color: #696661;
+		}
+
+		.top_right a:last-of-type {
+			width: 140px;
+			height: 40px;
+			line-height: 40px;
+			color: #95750e;
+			float: left;
+			background-color: #f9d65e;
+			margin-left: 10px;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			var aList = document.getElementsByClassName("nav")
+			for (var i = 0; i < aList.length; i++) {
+				var a = aList[i]
+				a.onclick = function () {
 					alert(this.innerHTML)
 				}
 			}
-			}
-		</script>
-	</head>
-	<body>
-		<div class="wrap">
-			<div class="heade">
-				<a href="#" class="logo"><img src="img/logo.png" alt="" height="90"></a>
-				<ul>
-					<li><a href="#" class="nav">功能特权</a></li>
-					<li><a href="#" class="nav">游戏特权</a></li>
-					<li><a href="#" class="nav">生活特权</a></li>
-					<li><a href="#" class="nav">会员活动</a></li>
-					<li><a href="#" class="nav">成长体系</a></li>
-					<li><a href="#" class="nav">年费专区</a></li>
-					<li><a href="#" class="nav">超级会员</a></li>
-				</ul>
-				<div class="top_right">
-					<a href="#">登陆</a>
-					<a href="#">开通超级会员</a>
-				</div>
+		}
+	</script>
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="heade">
+			<a href="#" class="logo"><img src="img/logo.png" alt="" height="90"></a>
+			<ul>
+				<li><a href="#" class="nav">功能特权</a></li>
+				<li><a href="#" class="nav">游戏特权</a></li>
+				<li><a href="#" class="nav">生活特权</a></li>
+				<li><a href="#" class="nav">会员活动</a></li>
+				<li><a href="#" class="nav">成长体系</a></li>
+				<li><a href="#" class="nav">年费专区</a></li>
+				<li><a href="#" class="nav">超级会员</a></li>
+			</ul>
+			<div class="top_right">
+				<a href="#">登陆</a>
+				<a href="#">开通超级会员</a>
 			</div>
-		</div>		
-	</body>
+		</div>
+	</div>
+</body>
+
 </html>
