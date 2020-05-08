@@ -89,16 +89,69 @@
 			margin-left: 10px;
 		}
 	</style>
+	<script src="js/jquery-1.12.4.js"></script>
 	<script>
+		// **********1、增加弹窗的各种方法**********
+		// 方法一，单独为每个标签增加单击时间调用的方法，然后写一个方法
+
+		// 方法二，使用DOM对象
+		// onload：网页内容加载完毕事件（包括网页文档、图片、视频）
 		window.onload = function () {
 			var aList = document.getElementsByClassName("nav")
 			for (var i = 0; i < aList.length; i++) {
-				var a = aList[i]
+				var a = aList[i];
 				a.onclick = function () {
-					alert(this.innerHTML)
+					alert(this.innerHTML);
 				}
 			}
 		}
+
+		// 网页文档结构加载完毕执行ready()内的方法
+		$(document).ready();
+
+		// window.onload与$(document).ready()的区别
+		// 	1、onload事件在一个页面中只能书写一次，ready()方法可以写多个
+		// 	2、执行时机不同，前者网页内容全部加载完毕，后者是网页文档结构加载完毕后执行
+		//	3、onload没有简写方式，ready()有简写方式：$();
+
+		// 页面加载完毕载入的事件/方法
+		$(function () {
+			// 方法三，使用jQuery对象
+			// $(".nav").click(function () {
+			// 	alert($(this).text());
+			// });
+			// **********1、增加弹窗的各种方法**********
+
+
+			// DOM与jQuery可以互相转换/调用
+			// nav此时为DOM对象
+			var nav = document.getElementsByClassName("nav")[0];
+			// alert(nav.innerHTML);
+			// $(nav)此时为jQuery对象
+			// alert($(nav).html());
+			// n为jQuery对象
+			// var n=$(nav);
+			// alert(n[0].innerHTML);
+
+			// **********2、鼠标移入移出增加背景颜色**********
+			// 鼠标移入事件
+			$("li").mouseover(function () {
+				// 设置单个样式
+				// $(this).css("background-color", "#f9d65e")
+				// 设置多个样式(以字典形式传入数据)
+				// 同时变色与移动位置
+				$(this).css({ "background-color": "#f9d65e", "line-height": "100px" })
+			})
+			// 鼠标移出事件
+			$("li").mouseout(function () {
+				// 单样式
+				// $(this).css("background-color", "#666")
+				// 多样式
+				// 同时变色与移动位置
+				$(this).css({ "background-color": "#666", "line-height": "90px" })
+			})
+			// **********2、鼠标移入移出增加背景颜色**********
+		});
 	</script>
 </head>
 
