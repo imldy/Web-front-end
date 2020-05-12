@@ -1,0 +1,60 @@
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵图</title>
+    <!-- 
+	Github repository：https://github.com/imldy/Web-front-end
+	如果有帮助到你，请给我点★Star
+    -->
+    <style>
+        /* 去掉所有元素的内外边距 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 背景色 */
+        body {
+            background-color: #cccccc;
+        }
+
+        /* 设置最外层盒子 */
+        .wrap {
+            width: 1000px;
+            /* 在网页中居中 */
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 190px;
+            height: 120px;
+            background-image: url(img/sprite.png);
+        }
+
+        .logo1 {
+            width: 125px;
+            height: 40px;
+            background-image: url(img/sprite.png);
+            /* 背景移动 */
+            background-position: 0px -120px;
+        }
+
+        /* 距离顶部高度 */
+        .logo,
+        .logo1 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="logo"></div>
+        <div class="logo1"></div>
+    </div>
+
+</body>
+
+</html>
