@@ -9,16 +9,38 @@
 
 <body>
     <!-- 表单标签 -->
-    <!-- form方法主要有POST和GET -->
+    <!-- form方法有POST和GET -->
     <!-- DOM：Document Object Model -->
+    <!-- veu 前端框架 -->
     <form action="index.html" method="POST">
         用户名：<input type="text" name="username" placeholder="请输入用户名"><br />
+        头　像：<input type="file" name="pic"><br />
+        性　别：<input type="radio" name="sex" value="男">男<input type="radio" value="女" name="sex">女<br />
+        爱　好：<input type="checkbox" name="hobby" value="吃饭">吃饭
+        <input type="checkbox" name="hobby" value="睡觉">睡觉
+        <input type="checkbox" name="hobby" value="打游戏">打游戏<br />
+        个人简介：<br />
+        <!-- 文本域 -->
+        <textarea name="userinfo" cols="30" rows="5"></textarea><br />
         密　码：<input type="password" name="password"><br />
-        <input type="submit" name="login" id="" value="登录">
+        <input type="button" name="login" id="login_btn" value="登录">
     </form>
 
     <script>
         console.log("cc")
+        window.onload = function () {
+            // 根据id值找到DOM对象
+            var login_btn = document.getElementById("login_btn");
+            // 也可以通过网页元素的标签名获取
+            login_btn.onclick = function () {
+                // 根据name值找到DOM对象
+                var username = document.getElementsByName("username")[0]
+                var userinfo = document.getElementsByTagName("textarea")[0]
+                // alert("点击了提交按钮")
+                // alert(username.value)
+                console.log("你输入的用户名：" + username.value + "，你的个人简介为：" + userinfo.value)
+            }
+        }
     </script>
 
 </body>
