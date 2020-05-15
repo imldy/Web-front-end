@@ -1,0 +1,65 @@
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM对象</title>
+    <!-- 
+    glog：https://imldy.cn/
+	Github repository：https://github.com/imldy/Web-front-end
+	如果有帮助到你，请给我点★Star
+    -->
+    <style>
+        #showContent{
+            font-size: 14px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="season" value="春"><br />
+    <input type="text" name="season" value="夏"><br />
+    <input type="text" name="season" value="秋"><br />
+    <input type="text" name="season" value="冬"><br />
+    <input type="button" value="获取input的值" onclick="getInput()">
+    <input type="button" value="获取season的值" onclick="getSeason()">
+    <p id="showContent"></p>
+    <script>
+        function getInput() {
+            console.log("你点击了获取input");
+            var cont = document.getElementById("showContent");
+            var inputs = document.getElementsByTagName("input");
+            var str = "";
+            for (var i = 0; i < inputs.length; i++) {
+                // 获取单个inputDOm对象
+                var input = inputs[i];
+                // 输出当前inputDOm对象的值
+                console.log(input.value + " ");
+                // 将每个inputDOm对象的值拼成一个字符串
+                str += input.value + " ";
+            }
+            // 令“showContent”的标签中的内容为：每个inputDOm对象的值拼成一个字符串
+            cont.innerHTML = str;
+        }
+        function getSeason() {
+            console.log("你点击了获取season");
+            var cont = document.getElementById("showContent");
+            var inputs = document.getElementsByName("season");
+            var str = "";
+            for (var i = 0; i < inputs.length; i++) {
+                // 获取单个inputDOm对象
+                var input = inputs[i];
+                // 输出当前inputDOm对象的值
+                console.log(input.value + " ");
+                // 将每个inputDOm对象的值拼成一个字符串
+                str += input.value + " ";
+            }
+            // 令“showContent”的标签中的内容为：每个inputDOm对象的值拼成一个字符串
+            cont.innerHTML = str;
+        }
+    </script>
+
+</body>
+
+</html>
