@@ -1,0 +1,61 @@
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+    blog：https://imldy.cn/
+	Github repository：https://github.com/imldy/Web-front-end
+	如果有帮助到你，请给我点★Star
+    -->
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $().ready(function () {
+            // mouseover：鼠标移动到元素上触发
+            $(".left").mouseover(function () {
+                // this代表当前对象，jQuery中使用需要经工厂函数处理
+                // html()方法，不传参数返回html内容，传参数代表设置html内容为参数的值
+                var content = $(this).html();
+                $(".right").html(content);
+            });
+        })
+    </script>
+    <style>
+        div {
+            padding: 10px;
+        }
+
+        .content {
+            width: 740px;
+            height: 320px;
+            border: 1px solid #666666;
+        }
+
+        .left {
+            width: 350px;
+            height: 300px;
+            background-color: #cccccc;
+            float: left;
+        }
+
+        .right {
+            width: 350px;
+            height: 300px;
+            background-color: lightblue;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="left">
+            <a href="#">这是一个浮动的盒子</a>
+        </div>
+        <div class="right"></div>
+    </div>
+
+</body>
+
+</html>
