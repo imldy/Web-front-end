@@ -10,11 +10,29 @@
 	如果有帮助到你，请给我点★Star
     -->
     <style>
-        #showContent{
+        #showContent {
             font-size: 14px;
             font-weight: 600;
         }
     </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("网页结构加载完毕时执行")
+            // jquery对象
+            var jqueryobject = $(".btn")
+            console.log(jqueryobject.val())
+            // jquery对象转为DOM对象 方法1
+            var DOMobject = jqueryobject[0]
+            console.log(DOMobject.value)
+            // jquery对象转为DOM对象 方法2
+            var DOMobject2 = jqueryobject.get(0)
+            console.log(DOMobject2.value)
+            // DOM对象转为jquery对象
+            console.log($(DOMobject).val())
+
+        })
+    </script>
 </head>
 
 <body>
@@ -22,7 +40,7 @@
     <input type="text" name="season" value="夏"><br />
     <input type="text" name="season" value="秋"><br />
     <input type="text" name="season" value="冬"><br />
-    <input type="button" value="获取input的值" onclick="getInput()">
+    <input type="button" value="获取input的值" onclick="getInput()" class="btn">
     <input type="button" value="获取season的值" onclick="getSeason()">
     <p id="showContent"></p>
     <script>
