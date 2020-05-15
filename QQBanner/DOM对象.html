@@ -32,11 +32,11 @@
             var inputs = document.getElementsByTagName("input");
             var str = "";
             for (var i = 0; i < inputs.length; i++) {
-                // 获取单个inputDOm对象
+                // 获取单个inputDOM对象
                 var input = inputs[i];
-                // 输出当前inputDOm对象的值
+                // 输出当前inputDOM对象的值
                 console.log(input.value + " ");
-                // 将每个inputDOm对象的值拼成一个字符串
+                // 将每个inputDOM对象的值拼成一个字符串
                 str += input.value + " ";
             }
             // 令“showContent”的标签中的内容为：每个inputDOm对象的值拼成一个字符串
@@ -45,15 +45,15 @@
         function getSeason() {
             console.log("你点击了获取season");
             var cont = document.getElementById("showContent");
-            var inputs = document.getElementsByName("season");
+            var seasons = document.getElementsByName("season");
             var str = "";
-            for (var i = 0; i < inputs.length; i++) {
-                // 获取单个inputDOm对象
-                var input = inputs[i];
-                // 输出当前inputDOm对象的值
-                console.log(input.value + " ");
-                // 将每个inputDOm对象的值拼成一个字符串
-                str += input.value + " ";
+            for (var i = 0; i < seasons.length; i++) {
+                // 获取单个seasonDOM对象
+                var season = seasons[i];
+                // 输出当前seasonDOM对象的值
+                console.log(season.value + " ");
+                // 将每个seasonDOM对象的值拼成一个字符串
+                str += season.value + " ";
             }
             // 令“showContent”的标签中的内容为：每个inputDOm对象的值拼成一个字符串
             cont.innerHTML = str;
