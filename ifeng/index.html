@@ -1,0 +1,94 @@
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>凤凰网</title>
+    <!-- 
+    blog：https://imldy.cn/
+	Github repository：https://github.com/imldy/Web-front-end
+	如果有帮助到你，请给我点★Star
+    -->
+    <script src="../QQBanner/js/jquery-1.12.4.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .logorow {
+            width: 1000px;
+            height: 66px;
+            margin: 0 auto;
+            /* position: relative; 相对定位 */
+            position: relative;
+        }
+
+        .logorow .logo {
+            display: block;
+            width: 130px;
+            height: 46px;
+            padding-top: 10px;
+        }
+
+        .logorow .logo img {
+            width: 130px;
+        }
+
+        .logorow>div {
+            float: right;
+            width: 360px;
+            height: 33px;
+            /* position: absolute; 绝对定位 */
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .logorow .rightbox a {
+            float: left;
+            /* margin: 10px 10px 0 0; 上右下左 */
+            margin: 10px 10px 0 0;
+        }
+
+        .logorow .rightbox a:last-child {
+            margin-top: 12px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="logorow">
+        <a class="logo" href="http://www.ifeng.com/">
+            <img src="img/logo.png" alt="">
+        </a>
+        <div class="rightbox">
+            <a href="http://www.ifeng.com/">
+                <img class="ad" src="img/ad1.jpg" alt="">
+            </a>
+            <a href="http://www.ifeng.com/">
+                <img src="img/help.jpg" alt="">
+            </a>
+        </div>
+    </div>
+    <script>
+        // 广告图循环显示
+        // 使用定时函数完成
+        // setTimeout：隔固定时间执行，只执行一次
+        // setInterval：隔固定时间执行，周期执行
+        var i = 1;
+        function changeImg() {
+            $(".ad").attr("src", "img/ad" + i + ".jpg");
+            console.log("换图")
+            i++;
+            if (i == 4) {
+                i = 1;
+            }
+        }
+        setInterval(changeImg, 5000);
+    </script>
+
+</body>
+
+</html>
