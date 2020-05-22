@@ -54,6 +54,54 @@
         .logorow .rightbox a:last-child {
             margin-top: 12px;
         }
+
+        .logorow .menu {
+            top: 33px;
+            right: 0;
+        }
+
+        .logorow .menu .links {
+            position: relative;
+        }
+
+        .logorow .menu a {
+            color: #333;
+            font-size: 12px;
+            background-image: url("img/bg.png");
+            /* 左边距 */
+            padding-left: 20px;
+            background-position-y: 2px;
+            /* 去掉下划线 */
+            text-decoration: none;
+            line-height: 33px;
+            /* 背景图片不重复 */
+            background-repeat: no-repeat;
+        }
+
+        .logorow .menu .search {
+            /* 取96像素之后的内容 */
+            background-position-x: -96px;
+        }
+        .logorow .menu .reg{
+            background-image: url("img/reg.gif");
+        }
+        .logorow .menu .see{
+            background-image: url("img/news.gif");
+            /* 舍去后边的5像素 */
+            background-position-x: 5px;
+        }
+        .logorow .menu .phone{
+            background-image: url("img/tv.gif");
+            /* 舍去后边的4像素 */
+            background-position-x: 4px;
+        }
+        .logorow .menu .line-top{
+            width: 1px;
+            background-color: #ccc;
+            height: 15px;
+            position: absolute;
+            top: 9px;
+        }
     </style>
 </head>
 
@@ -70,6 +118,18 @@
             <a href="http://www.ifeng.com/">
                 <img src="img/help.jpg" alt="">
             </a>
+        </div>
+        <div class="menu">
+            <div class="links">
+                <a class="login" href="#">登录</a>
+                <a class="reg" href="#">注册</a>
+                <span class="line-top"></span>
+                <a class="search" href="#">查找</a>
+                <span class="line-top"></span>
+                <a class="see" href="#">手机看新闻</a>
+                <span class="line-top"></span>
+                <a class="phone" href="#">PHONEIX TV</a>
+            </div>
         </div>
     </div>
     <script>
