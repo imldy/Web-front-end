@@ -16,6 +16,11 @@
             padding: 0;
         }
 
+        body {
+            font-family: simsun, arial, helvetica, clean, sans-serif;
+        }
+
+        /* 顶部logo区域开始 */
         .logorow {
             width: 1000px;
             height: 66px;
@@ -82,26 +87,65 @@
             /* 取96像素之后的内容 */
             background-position-x: -96px;
         }
-        .logorow .menu .reg{
+
+        .logorow .menu .reg {
             background-image: url("img/reg.gif");
         }
-        .logorow .menu .see{
+
+        .logorow .menu .see {
             background-image: url("img/news.gif");
             /* 舍去后边的5像素 */
             background-position-x: 5px;
         }
-        .logorow .menu .phone{
+
+        .logorow .menu .phone {
             background-image: url("img/tv.gif");
             /* 舍去后边的4像素 */
             background-position-x: 4px;
         }
-        .logorow .menu .line-top{
+
+        .logorow .menu .line-top {
             width: 1px;
             background-color: #ccc;
             height: 15px;
             position: absolute;
             top: 9px;
         }
+        /* 顶部logo区域结束 */
+        
+        /* 导航栏开始 */
+        .nav {
+            width: 100%;
+            height: 40px;
+            background-color: #F54343;
+        }
+
+        .nav ul {
+            width: 1000px;
+            height: 40px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .nav ul li {
+            width: 6.6%;
+            height: 38px;
+            float: left;
+            line-height: 38px;
+            background: url(img/libg.png) no-repeat left top;
+            text-align: center;
+        }
+
+        .nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* 导航栏结束 */
     </style>
 </head>
 
@@ -131,6 +175,25 @@
                 <a class="phone" href="#">PHONEIX TV</a>
             </div>
         </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="#">咨询</a></li>
+            <li><a href="#">视频</a></li>
+            <li><a href="#">直播</a></li>
+            <li><a href="#">财经</a></li>
+            <li><a href="#">娱乐</a></li>
+            <li><a href="#">体育</a></li>
+            <li><a href="#">文化</a></li>
+            <li><a href="#">时尚</a></li>
+            <li><a href="#">汽车</a></li>
+            <li><a href="#">房产</a></li>
+            <li><a href="#">科技</a></li>
+            <li><a href="#">智库</a></li>
+            <li><a href="#">小说</a></li>
+            <li><a href="#">佛教</a></li>
+            <li><a href="#">梧桐汇</a></li>
+        </ul>
     </div>
     <script>
         // 广告图循环显示
