@@ -74,7 +74,7 @@
             font-size: 12px;
             background-image: url("img/bg.png");
             /* 左边距 */
-            padding-left: 20px;
+            padding: 2px 0px 0px 20px;
             background-position-y: 2px;
             /* 去掉下划线 */
             text-decoration: none;
@@ -111,8 +111,9 @@
             position: absolute;
             top: 9px;
         }
+
         /* 顶部logo区域结束 */
-        
+
         /* 导航栏开始 */
         .nav {
             width: 100%;
@@ -146,6 +147,17 @@
         }
 
         /* 导航栏结束 */
+
+        .btn {
+            width: 100px;
+            height: 30;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 600;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
     </style>
 </head>
 
@@ -181,12 +193,12 @@
             <li><a href="#">咨询</a></li>
             <li><a href="#">视频</a></li>
             <li><a href="#">直播</a></li>
-            <li><a href="#">财经</a></li>
+            <li class="caijing"><a href="#">财经</a></li>
             <li><a href="#">娱乐</a></li>
             <li><a href="#">体育</a></li>
             <li><a href="#">文化</a></li>
             <li><a href="#">时尚</a></li>
-            <li><a href="#">汽车</a></li>
+            <li class="car"><a href="#">汽车</a></li>
             <li><a href="#">房产</a></li>
             <li><a href="#">科技</a></li>
             <li><a href="#">智库</a></li>
@@ -195,7 +207,30 @@
             <li><a href="#">梧桐汇</a></li>
         </ul>
     </div>
+    <div class="btn">点击</div>
     <script>
+        // jQuery选择器
+        $(function () {
+            $(".btn").click(function () {
+                // $(".caijing").css("background-color", "blue");
+                // 并集选择器，使用逗号分割
+                // $(".caijing,.car").css("background-color", "blue");
+                // 层次选择器，通过元素之间的层次关系选择元素
+                //      空格：表示后代选择器，即当前元素的后代元素（内部任何地方满足条件的元素）
+                // $(".nav a").css("background-color", "blue");
+                //      >：子选择器，当前元素的子元素，即内部的下一层元素，限制是下一层
+                // $("div>a").css("background-color", "blue");
+                //      +：相邻元素选择器，选取当前元素紧邻其后的元素
+                // $(".caijing+li").css("background-color", "blue");
+                //      next()方法：选择当前元素的下一同级元素
+                // $(".caijing,.car").next().css("background-color", "blue");
+                //      ~：同辈选择器，选择当前元素之后的所有同级别的元素
+                // $(".caijing~li").css("background-color", "blue");
+                //      siblings()：选择所有同级别元素，不含自己
+                $(".caijing").siblings().css("background-color", "blue");
+            });
+        });
+
         // 广告图循环显示
         // 使用定时函数完成
         // setTimeout：隔固定时间执行，只执行一次
