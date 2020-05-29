@@ -17,19 +17,19 @@
                 //需求1:自营图书几十万畅销品种  字体颜色为红色
                 $(".intro").css("color", "red");
                 //需求2:京东价 "￥24.10" 字体为24px,红色加粗显示
-                $("#jdPrice>span").css({"font-size":"24px","color":"red","font-weight":"bold"});
+                $("#jdPrice>span").css({ "font-size": "24px", "color": "red", "font-weight": "bold" });
                 //需求3："定价：￥35.00"字体颜色为#ccc,价格中有中划线(删除线)
-                $("#jdPrice>p>span").css({"color":"#ccc","text-decoration": "line-through"});
+                $("#jdPrice>p>span").css({ "color": "#ccc", "text-decoration": "line-through" });
                 //需求4：<dl>标签中的字体颜色均为红色
-                $("dl").css("color","red");
+                $("dl").css("color", "red");
             });
 
             // 点击“以下促销可在购物车任选其一”
-            $("dt").click(function(){
+            $("dt").click(function () {
                 //需求5：点击“以下促销...“显示隐藏的内容，此部分内容字体颜色为红色
-                $("dl>dd").show().css("color","red");
+                $("dl>dd").show().css("color", "red");
                 //需求6："加价购”，“满减”，“105-6”，“200-16"字体颜色为白色，背景颜色为红色，上下内边距为1px，左右内边距为5px，外右边距为5px
-                $("dd>span,#ticket>span").css({"color":"white","background-color":"red","padding":"1px 5px","margin-right":"5px"});
+                $("dd>span,#ticket>span").css({ "color": "white", "background-color": "red", "padding": "1px 5px", "margin-right": "5px" });
             });
         });
     </script>
