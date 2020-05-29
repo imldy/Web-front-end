@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>使用jQuery美化英雄联盟简介页 </title>
+    <script src="../QQBanner/js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            // 单击<p>元素后
+            $("p").click(function () {
+                // 设置class为txt_box的元素内class为current的元素的背景颜色为#6FF
+                $(".txt_box .current").css("background-color", "#6FF");
+                // <p>的子元素<span>的背景颜色为#F9F
+                $("p>span").css("background-color", "#F9F");
+                // 紧邻<h1>后的<p>元素的背景颜色为#FF6
+                // 方法1
+                // $("h1").next().css("background-color","#FF6");
+                // 方法2
+                $("h1+p").css("background-color", "#FF6");
+                // "即时对战"文本颜色为#FFF,背景颜色为#F00
+                $("#content>span>span").css({ "color": "#FFF", "background-color": "#F00" });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>英雄联盟</h1>
+    <p> 《英雄联盟》，简称LOL。</p>
+    <p id="content">
+        由<strong>Riot Games </strong>开发，为3D竞技场战游戏，其
+        <span>主创团队由实力强劲的
+            <strong>魔兽争霸</strong>
+            系列游戏多人<span>即时对战</span>自定义地图开发团队
+        </span>...
+        <a href="#">更多详情</a>
+    </p>
+    <h2>目录</h2>
+    <ul class="txt_box">
+        <li class="current">开发团队</li>
+        <li>游戏周边</li>
+        <li>游戏介绍</li>
+        <li>配置需求</li>
+        <li>游戏背景</li>
+    </ul>
+</body>
+
+</html>
