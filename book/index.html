@@ -1,0 +1,57 @@
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标移入移出</title>
+    <!-- 
+    blog：https://imldy.cn/
+    repo：https://github.com/imldy/Web-front-end
+    -->
+    <style>
+        .wrap {
+            width: 300px;
+            border: 1px solid #cccccc;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        .wrap h2 {
+            text-align: center;
+            height: 25px;
+            line-height: 25px;
+            background-color: lightblue;
+        }
+
+        .wrap p {
+            display: none;
+        }
+    </style>
+    <script src="../QQBanner/js/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // $("h2").mouseover(function(){
+            //     $("p").show(1000);
+            // });
+            // $("h2").mouseout(function(){
+            //     $("p").hide(1000);
+            // });
+            $("h2").hover(function(){
+                $("p").slideDown(1000);
+            },function(){
+                $("p").slideUp(1000);
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <h2>英雄联盟</h2>
+        <p>《英雄联盟》，简称LOL。由Riot Games 开发，为3D竞技场战游戏，其主创团队由实力强劲的 魔兽争霸 系列游戏多人即时对战自定义地图开发团队 ... 更多详情</p>
+    </div>
+
+</body>
+
+</html>
