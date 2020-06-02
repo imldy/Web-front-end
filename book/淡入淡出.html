@@ -1,0 +1,46 @@
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淡入淡出</title>
+    <style>
+        .wrap {
+            width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="../QQBanner/js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            // $(".wrap>div+input+input")
+            // $(".wrap>div").next().next()
+            // $($(".wrap>input")[1])
+            // $($(".wrap>div~input")[1])
+            // $("input[value='淡出']")
+            $(".wrap input[value='淡出']")
+                .click(function () {
+                    console.log("点击了淡出");
+                    $("img").fadeOut(2000);
+                });
+            $(".wrap input[value='淡入']")
+                .click(function () {
+                    console.log("点击了淡入");
+                    $("img").fadeIn(2000);
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div>
+            <img src="images/岛上书店.png" alt="">
+        </div>
+        <input type="button" value="淡入">
+        <input type="button" value="淡出">
+    </div>
+
+</body>
+
+</html>
