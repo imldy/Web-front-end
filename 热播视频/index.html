@@ -8,13 +8,15 @@
     <script>
         $(function(){
             //需求1：设置图片与右侧内容间距10px
-            
+            $("ul>li:not(li:last)").css("margin-right","10px");
             //需求2: 设置右侧列表背景颜色为#f0f0f0
-            
+            $("ul>li:last").css("background-color","#f0f0f0");
             //需求3：数字1/2/3背景颜色为#f0a30f,后面的数字背景颜色为#a4a3a3
-            
+            $("ul>li>span,ol>li>span:first").css("background-color","#f0a30f");
+            $("ol>li>span:not(:first)").css("background-color","#a4a3a3");
             //需求4: 3/5/6/7 箭头向上 4/8/9/10 箭头向下  lt 小于  gt大于  eq等于
-            
+            $("ol>li:lt(5):not(:eq(1))").css("background","url(images/orange.jpg) no-repeat right top");
+            $("ol>li:eq(1),ol>li:gt(4)").css("background","url(images/green.jpg) no-repeat right top");
         });
     </script>
 </head>
