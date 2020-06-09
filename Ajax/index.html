@@ -1,0 +1,33 @@
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+    blog：https://imldy.cn/
+    repo：https://github.com/imldy/Web-front-end
+    -->
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            url = "http://api.k780.com/?app=weather.today&weaid=221.2.52.44&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json"
+            $.get(url, function (data) {
+                console.log(data);
+                result = data.result;
+                info = "城市：" + result.citynm + "<br>天气：" + result.weather + "<br>温度：" + result.temperature;
+                $(".weather>span").html(info);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="weather">
+        <span></span>
+
+    </div>
+
+</body>
+
+</html>
