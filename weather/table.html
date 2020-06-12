@@ -16,22 +16,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     <script>
         $(function () {
-            var apiurl = "http://wthrcdn.etouch.cn/weather_mini?city=%E6%97%A5%E7%85%A7";
-            $.getJSON(apiurl, function (result) {
-                console.log(result);
-                var datalist = result.data.forecast;    // 将天气信息提取到一个数组中
-                for (var i = 0; i < datalist.length; i++) {
-                    var newTr = $("<tr></tr>");         // 新建一个存放一行内容的tr
-                    var newTh = $("<th></th>").attr("scope", "row").html(i + 1);    // 新建一个序号列
-                    var newdate = $("<td></td>").html(datalist[i].date)             // 新建一个日期列
-                    var newHigh = $("<td></td>").html(datalist[i].high)             // 新建一个最高温度列
-                    var newFX = $("<td></td>").html(datalist[i].fengxiang)          // 新建一个风向列
-                    newTr.append(newTh).append(newdate).append(newHigh).append(newFX).appendTo($("tbody"))  // 在tr内部添加列信息，再将tr添加至tbody内部
-                }
-                $(".prompt").html(result.data.ganmao+"<br>当前温度："+result.data.wendu+"℃")
-                $(".city").html(result.data.city)
+            $("#getWeather").click(function () {
+                // 输入城市获取天气
+                var city = $("#inputCity").val();
+                console.log(city);
+                var apiurl = "http://wthrcdn.etouch.cn/weather_mini?city="+city;
+                $.getJSON(apiurl, function (result) {
+                    console.log(result);
+                    var datalist = result.data.forecast;    // 将天气信息提取到一个数组中
+                    for (var i = 0; i < datalist.length; i++) {
+                        var newTr = $("<tr></tr>");         // 新建一个存放一行内容的tr
+                        var newTh = $("<th></th>").attr("scope", "row").html(i + 1);    // 新建一个序号列
+                        var newdate = $("<td></td>").html(datalist[i].date)             // 新建一个日期列
+                        var newHigh = $("<td></td>").html(datalist[i].high)             // 新建一个最高温度列
+                        var newFX = $("<td></td>").html(datalist[i].fengxiang)          // 新建一个风向列
+                        newTr.append(newTh).append(newdate).append(newHigh).append(newFX).appendTo($("tbody"))  // 在tr内部添加列信息，再将tr添加至tbody内部
+                    }
+                    $(".prompt").html(result.data.ganmao + "<br>当前温度：" + result.data.wendu + "℃")
+                    $(".city").html(result.data.city)
+                });
             });
-
         });
     </script>
 </head>
@@ -40,6 +44,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+                <!-- 输入城市获取天气 -->
+                <div class="form-group">
+                    <label>输入城市名获取其天气</label>
+                    <input type="text" class="form-control" id="inputCity" placeholder="城市名" value="日照">
+                </div>
+                <button type="submit" class="btn btn-default" id="getWeather">获取</button>
+                <!-- </form> -->
                 <h4 class="city"></h4>
                 <table class="table table-striped">
                     <thead>
