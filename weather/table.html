@@ -14,6 +14,26 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            var apiurl = "http://wthrcdn.etouch.cn/weather_mini?city=%E6%97%A5%E7%85%A7";
+            $.getJSON(apiurl, function (result) {
+                var datalist = result.data.forecast;
+                var newTr = $("<tr></tr>");
+                var newTh = $("<th></th>").attr("scope","row");
+                var newRow = $("<td></td>");
+                for (var i = 0; i < datalist.length; i++) {
+                    newTh.html(i+1);
+                    var newdate = newRow.html(datalist[i].date)
+                    newTh.after(newdate)
+                    .after(newRow.html(datalist[i].high))
+                    .after(newRow.html(datalist[i].fengxiang))
+                    .appendTo($("tbody"))
+                }
+            });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -24,9 +44,9 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
+                            <th>日期</th>
+                            <th>温度</th>
+                            <th>风向</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,18 +55,6 @@
                             <td>Mark</td>
                             <td>Otto</td>
                             <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
                         </tr>
                     </tbody>
                 </table>
