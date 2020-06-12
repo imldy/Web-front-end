@@ -20,7 +20,9 @@
                 // 输入城市获取天气
                 var city = $("#inputCity").val();
                 console.log(city);
-                var apiurl = "http://wthrcdn.etouch.cn/weather_mini?city="+city;
+                var apiurl = "http://wthrcdn.etouch.cn/weather_mini?city=" + city;
+                // 现将原来的删掉
+                $("tbody>tr").remove();
                 $.getJSON(apiurl, function (result) {
                     console.log(result);
                     var datalist = result.data.forecast;    // 将天气信息提取到一个数组中
@@ -49,7 +51,7 @@
                     <label>输入城市名获取其天气</label>
                     <input type="text" class="form-control" id="inputCity" placeholder="城市名" value="日照">
                 </div>
-                <button type="submit" class="btn btn-default" id="getWeather">获取</button>
+                <button type="submit" class="btn btn-default" id="getWeather">获取天气</button>
                 <!-- </form> -->
                 <h4 class="city"></h4>
                 <table class="table table-striped">
