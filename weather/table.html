@@ -21,7 +21,7 @@
                 var city = $("#inputCity").val();
                 console.log(city);
                 var apiurl = "http://wthrcdn.etouch.cn/weather_mini?city=" + city;
-                // 现将原来的删掉
+                // 先将原来的删掉
                 $("tbody>tr").remove();
                 $.getJSON(apiurl, function (result) {
                     console.log(result);
