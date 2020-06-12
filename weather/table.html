@@ -18,17 +18,14 @@
         $(function () {
             var apiurl = "http://wthrcdn.etouch.cn/weather_mini?city=%E6%97%A5%E7%85%A7";
             $.getJSON(apiurl, function (result) {
-                var datalist = result.data.forecast;
-                var newTr = $("<tr></tr>");
-                var newTh = $("<th></th>").attr("scope","row");
-                var newRow = $("<td></td>");
+                var datalist = result.data.forecast;    // 将天气信息提取到一个数组中
                 for (var i = 0; i < datalist.length; i++) {
-                    newTh.html(i+1);
-                    var newdate = newRow.html(datalist[i].date)
-                    newTh.after(newdate)
-                    .after(newRow.html(datalist[i].high))
-                    .after(newRow.html(datalist[i].fengxiang))
-                    .appendTo($("tbody"))
+                    var newTr = $("<tr></tr>");         // 新建一个存放一行内容的tr
+                    var newTh = $("<th></th>").attr("scope", "row").html(i + 1);    // 新建一个序号列
+                    var newdate = $("<td></td>").html(datalist[i].date)             // 新建一个日期列
+                    var newHigh = $("<td></td>").html(datalist[i].high)             // 新建一个最高温度列
+                    var newFX = $("<td></td>").html(datalist[i].fengxiang)          // 新建一个风向列
+                    newTr.append(newTh).append(newdate).append(newHigh).append(newFX).appendTo($("tbody"))  // 在tr内部添加列信息，再将tr添加至tbody内部
                 }
             });
 
@@ -50,12 +47,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
