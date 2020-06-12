@@ -28,7 +28,7 @@
                     var newFX = $("<td></td>").html(datalist[i].fengxiang)          // 新建一个风向列
                     newTr.append(newTh).append(newdate).append(newHigh).append(newFX).appendTo($("tbody"))  // 在tr内部添加列信息，再将tr添加至tbody内部
                 }
-                $(".prompt").html(result.data.ganmao+result.data.wendu+"℃")
+                $(".prompt").html(result.data.ganmao+"<br>当前温度："+result.data.wendu+"℃")
                 $(".city").html(result.data.city)
             });
 
