@@ -61,3 +61,7 @@
 如图所示：
 
 ![Star](https://qiniu-blog.taokeml.top/PicGo/20200508223141.png)
+
+## 开源协议
+
+GPLv3
