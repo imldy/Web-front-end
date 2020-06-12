@@ -10,12 +10,38 @@
     -->
     <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
     <script>
+        $(function () {
+            var newLi = $("<li></li>").html("MySQL");
+
+            // 父级元素添加子元素
+            // $("ul").append(newLi);       // 前者内部追加后者
+            // newLi.appendTo($("ul"));     // 前者追加到后者内部
+            // $("ul").prepend(newLi);      // 前者内部前置添加后者
+            // newLi.prependTo($("ul"))     // 前者前置添加到后者内部
+
+            // 添加同级元素
+            // $("ul").after(newLi);        // 前者在后边添加后者
+            // newLi.insertAfter($("ul"));  // 前者添加到后者的后边
+            // $("ul").before(newLi);       // 前者在前边添加后者
+            // newLi.insertBefore($("ul")); // 前者添加到后者的前边
+
+            // 删除节点元素
+            // $("ul>li:eq(2)").remove();   // 彻底删除
+            // var oldLi = $("ul>li:eq(2)").detach();       // 删除后返回删除的元素
+            // $("ul").prepend(oldLi);      // 使用返回的元素
+            // $("ul>li:eq(2)").empty();    // 将文本内容清空
+
+            // 替换节点
+            // $("ul>li:eq(2)").replaceWith(newLi); //前者替换为后者
+            newLi.replaceAll($("ul>li:eq(2)"))      // 用前者替换后者
+
+        });
 
     </script>
 </head>
 
 <body>
-    <div>
+    <div class="content">
         <ul>
             <li>JAVA</li>
             <li>C++</li>
