@@ -2,6 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta author="imldy" author_blog="imldy.cn">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BootStrap Table</title>
     <!-- 
@@ -32,7 +33,19 @@
                         var newdate = $("<td></td>").html(datalist[i].date)             // 新建一个日期列
                         var newHigh = $("<td></td>").html(datalist[i].high)             // 新建一个最高温度列
                         var newFX = $("<td></td>").html(datalist[i].fengxiang)          // 新建一个风向列
-                        newTr.append(newTh).append(newdate).append(newHigh).append(newFX).appendTo($("tbody"))  // 在tr内部添加列信息，再将tr添加至tbody内部
+                        // 操作列
+                        var editBtn = $("<button></button>")                            //创建编辑按钮
+                            .after("type", "button")
+                            .addClass("btn btn-primary btn-sm")
+                            .append($("<span></span>").attr("aria-hidden", "true").addClass("glyphicon glyphicon-pencil"))  // 添加编辑（笔）图标
+                            .append(" 编辑");   //不能使用html方法，会把图标覆盖
+                        var delBtn = $("<button></button>")                             //创建删除按钮
+                            .after("type", "button")
+                            .addClass("btn btn-danger btn-sm")
+                            .append($("<span></span>").attr("aria-hidden", "true").addClass("glyphicon glyphicon-trash"))   // 添加删除（垃圾桶）图标
+                            .append(" 编辑");
+                        var newOp = $("<td></td>").append(editBtn).append(" ").append(delBtn);// 新建一个操作列并将编辑按钮和删除按钮加入
+                        newTr.append(newTh).append(newdate).append(newHigh).append(newFX).append(newOp).appendTo($("tbody"))  // 在tr内部添加列信息，再将tr添加至tbody内部
                     }
                     $(".prompt").html(result.data.ganmao + "<br>当前温度：" + result.data.wendu + "℃")
                     $(".city").html(result.data.city)
@@ -68,6 +81,7 @@
                             <th>日期</th>
                             <th>温度</th>
                             <th>风向</th>
+                            <th>操作</th>
                         </tr>
                     </thead>
                     <tbody>
