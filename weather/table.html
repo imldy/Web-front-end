@@ -43,7 +43,7 @@
                             .after("type", "button")
                             .addClass("btn btn-danger btn-sm")
                             .append($("<span></span>").attr("aria-hidden", "true").addClass("glyphicon glyphicon-trash"))   // 添加删除（垃圾桶）图标
-                            .append(" 编辑");
+                            .append(" 删除");
                         var newOp = $("<td></td>").append(editBtn).append(" ").append(delBtn);// 新建一个操作列并将编辑按钮和删除按钮加入
                         newTr.append(newTh).append(newdate).append(newHigh).append(newFX).append(newOp).appendTo($("tbody"))  // 在tr内部添加列信息，再将tr添加至tbody内部
                     }
@@ -81,7 +81,7 @@
                         <div class="form-group">
                             <label for="inputRQ" class="col-sm-2 control-label">日期</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputData" placeholder="请输入新的日期">
+                                <input type="text" class="form-control" id="inputDate" placeholder="请输入新的日期">
                             </div>
                         </div>
                         <div class="form-group">
