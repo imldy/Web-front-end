@@ -1,0 +1,143 @@
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="imldy" author_blog="imldy.cn">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻</title>
+    <!-- 
+    blog：https://imldy.cn/
+    repo：https://github.com/imldy/Web-front-end
+    -->
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            // 请求新闻数据开始
+            var newlist_url = "http://119.45.125.232:8080/newslist.json";
+            $.ajax({
+                url: newlist_url,
+                dataType: "jsonp",
+                jsonpCallback: "newsHandler",
+                success: function (result) {
+                    console.log(result);
+                    if (result.code == 100) {
+                        var newsList = result.extend.newsList;
+                        for (var i = 0; i < newsList.length; i++) {
+                            var newTr = $("<tr></tr>");                                         // 新建一个存放一行内容的tr
+                            var newTh = $("<th></th>").attr("scope", "row").html(i + 1);        // 新建一个序号列
+                            var newTitle = $("<td></td>").html(newsList[i].ntitle)              // 新建一个标题列
+                            var newAuthor = $("<td></td>").html(newsList[i].nauthor)            // 新建一个作者列
+                            var newSummary = $("<td></td>").html(newsList[i].nsummary)          // 新建一个简介列
+                            var newContent = $("<td></td>").html(newsList[i].ncontent)
+                            var newModifydate = $("<td></td>").html(newsList[i].nmodifydate)    // 新建一个修改时间列
+                            // 新建操作列
+                            var editBtn = $("<button></button>")                            //创建编辑按钮
+                                .after("type", "button")
+                                .addClass("btn btn-primary btn-sm")
+                                .append($("<span></span>").attr("aria-hidden", "true").addClass("glyphicon glyphicon-pencil"))  // 添加编辑（笔）图标
+                                .append(" 编辑");   //不能使用html方法，会把图标覆盖
+                            var delBtn = $("<button></button>")                             //创建删除按钮
+                                .after("type", "button")
+                                .addClass("btn btn-danger btn-sm")
+                                .append($("<span></span>").attr("aria-hidden", "true").addClass("glyphicon glyphicon-trash"))   // 添加删除（垃圾桶）图标
+                                .append(" 删除");
+                            var newOp = $("<td></td>").append(editBtn).append(" ").append(delBtn);// 新建一个操作列并将编辑按钮和删除按钮加入
+                            // 在tr内部添加各列信息，再将tr添加至tbody内部
+                            newTr.append(newTh).append(newTitle).append(newAuthor).append(newSummary).append(newContent).append(newModifydate).append(newOp).appendTo($("tbody"))
+                        }
+                    } else {
+                        alert("数据请求失败，请刷新重试");
+                    }
+                }
+            });
+            // 请求新闻数据结束
+
+            // 为编辑按钮绑定方法开始
+            $(document).on("click", ".btn-primary", function () {
+                console.log("点击了编辑");
+                $('#editMoal').modal({ "backdrop": "static" });
+            });
+            // 为编辑按钮绑定方法结束
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 模态窗口开始 -->
+    <div id="editMoal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">修改新闻数据</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- 提交数据的表单开始 -->
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputTitle" class="col-sm-2 control-label">标题</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputTitle" placeholder="请输入新的标题">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAuthor" class="col-sm-2 control-label">作者</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputAuthor" placeholder="请输入新的作者">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSummary" class="col-sm-2 control-label">简介</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputSummary" placeholder="请输入新的简介">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputContent" class="col-sm-2 control-label">内容</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputContent" placeholder="请输入新的内容">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- 提交数据的表单结束 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">保存修改</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- 模态窗口结束 -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>标题</th>
+                            <th>作者</th>
+                            <th>简介</th>
+                            <th>内容</th>
+                            <th>修改时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <p class="prompt"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
