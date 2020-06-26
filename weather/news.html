@@ -58,6 +58,21 @@
                             }, {
                                 title: '修改时间',
                                 field: 'nmodifydate',
+                            }, {
+                                title: '操作',
+                                formatter: function (value, row, index) {
+                                    console.log("value：" + value + "，row：" + row + "，index：" + index);
+                                    let update_btn = "";
+                                    update_btn += '<button class="btn btn-primary btn-sm" onclick="upDateNews(' + row.nid + ')">';
+                                    update_btn += '<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>'
+                                    update_btn += ' 修改</button>'
+                                    let del_btn = "";
+                                    del_btn += '<button class="btn btn-danger btn-sm">';
+                                    del_btn += '<span aria-hidden="true" class="glyphicon glyphicon-trash"></span>'
+                                    del_btn += ' 删除</button>'
+                                    return update_btn + del_btn
+
+                                }
                             }]
                         });
                         // 使底部分页状态栏上移
@@ -69,6 +84,10 @@
             });
             // 请求新闻数据结束
         });
+        // 修改数据按钮单击方法
+        function upDateNews(nid) {
+            console.log(nid);
+        }
     </script>
 </head>
 
