@@ -60,19 +60,14 @@
                                 field: 'nmodifydate',
                             }]
                         });
+                        // 使底部分页状态栏上移
+                        $(".bootstrap-table,.fixed-table-container,.fixed-table-body").css("height", "auto");
                     } else {
                         alert("数据请求失败，请刷新重试");
                     }
                 }
             });
             // 请求新闻数据结束
-
-            // 为编辑按钮绑定方法开始
-            $(document).on("click", ".btn-primary", function () {
-                console.log("点击了编辑");
-                $('#editMoal').modal({ "backdrop": "static" });
-            });
-            // 为编辑按钮绑定方法结束
         });
     </script>
 </head>
