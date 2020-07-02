@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>当当图书导航</title>
+	<link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="top">
+		<div class="wrap">
+			<div class="top-l left">欢迎光临当当，请<a href="" class="top-login">登录</a><a href="">免费注册</a></div>
+			<ul class="top-m right">
+				<li><a href=""><i class="top-car left"></i>购物车</a></li>
+				<li class="line"></li>
+				<li><a href="">我的订单</a></li>
+				<li class="line"></li>
+				<li><a href="">当当自出版</a></li>
+				<li class="line"></li>
+				<li><a href=""><i class="top-tel left"></i>手机当当</a></li>
+				<li class="line"></li>
+				<li class="on">
+					<a href="" class="menu-btn">我的当当</a>
+					<ul class="topDown">
+						<li><a href="">我的积分</a></li>
+						<li><a href="">我的收藏</a></li>
+						<li><a href="">我的余额</a></li>
+						<li><a href="">我的评论</a></li>
+						<li><a href="">电子书架</a></li>
+					</ul>
+				</li>
+				<li class="line"></li>
+				<li><a href="" class="menu-btn">企业采购</a></li>
+				<li class="line"></li>
+				<li><a href="" class="menu-btn">客户服务</a></li>
+				<li class="line"></li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="wrap">
+		<a href=""><img src="images/logo.jpg" /></a>
+	</div>
+	<div class="nav-box">
+		<div class="wrap">
+			<ul class="nav-ul">
+				<li class="all"><a href="">全部商品详细分类</a></li>
+				<li><a href="">尾品会</a></li>
+				<li><a href="">图书</a></li>
+				<li><a href="">电子书</a></li>
+				<li><a href="">服装</a></li>
+				<li><a href="">运动户外</a></li>
+				<li><a href="">婴孕童</a></li>
+				<li><a href="">家具</a></li>
+				<li><a href="">当当优品</a></li>
+				<li><a href="">电器城</a></li>
+				<li><a href="">当当超市</a></li>
+				<li><a href="">海外购</a></li>
+				<div class="clearfix"></div>
+			</ul>
+		</div>
+	</div>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function () {
+			$(".nav-ul>li").mouseover(function () {
+				$(this).css("background", "#c11c24");
+			});
+			$(".nav-ul>li").mouseout(function () {
+				$(this).css("background", "#ff2832");
+			});
+			$(".menu-btn").mouseover(function(){
+				$(".topDown").show()
+			});
+			$(".menu-btn").mouseout(function(){
+				$(".topDown").hide();
+			});
+		});
+	</script>
+</body>
+
+</html>
