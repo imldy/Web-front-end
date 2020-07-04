@@ -42,6 +42,22 @@
 	<input type="button" class="search_btn" />
 
 	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function () {
+			// 获取网页上输入框原本的商品
+			var value = $("#searchtxt").val();
+			// 链式对其添加方法
+			$("#searchtxt").focus(function () {
+				// 得到焦点事件
+				// 另其为空
+				$(this).val("");
+			}).blur(function () {
+				// 失去焦点
+				// 另其为原来的值
+				$(this).val(value);
+			});
+		});
+	</script>
 
 </body>
 
